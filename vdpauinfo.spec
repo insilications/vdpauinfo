@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : vdpauinfo
 Version  : 1.4
-Release  : 2
+Release  : 3
 URL      : file:///insilications/build/clearlinux/packages/vdpauinfo/vdpauinfo-1.4.tar.gz
 Source0  : file:///insilications/build/clearlinux/packages/vdpauinfo/vdpauinfo-1.4.tar.gz
 Summary  : No detailed summary available
@@ -40,8 +40,9 @@ cd %{_builddir}/vdpauinfo
 unset http_proxy
 unset https_proxy
 unset no_proxy
+export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1599407135
+export SOURCE_DATE_EPOCH=1600333863
 unset LD_AS_NEEDED
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -76,10 +77,11 @@ export LANG=C.UTF-8
 unset http_proxy
 unset https_proxy
 unset no_proxy
+export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1599407135
+export SOURCE_DATE_EPOCH=1600333863
 rm -rf %{buildroot}
 %make_install
 
